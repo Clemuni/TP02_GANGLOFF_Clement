@@ -1,0 +1,4 @@
+<p>{{name}}</p>
+<button [disabled]="!firstButtonIsValid" (click)="handleFirstButtonClick()">Envoyer</button>
+<button [disabled]="!secondButtonIsValid" (click)="handleSecondButtonClick()">Envoyer</button>
+<input [(ngModel)]="name" />
