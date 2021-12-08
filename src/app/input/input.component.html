@@ -1,0 +1,5 @@
+<div class="form-row">
+    <label for="{{ label }}">{{ label }}</label>
+    <input type="{{ type }}" [(ngModel)]="value" id="{{ label }}" (input)="handleInputChange($event)" />
+    <span *ngIf="!isValid" class="error">Error</span>
+</div>

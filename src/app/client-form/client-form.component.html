@@ -1,0 +1,29 @@
+<h1>Informations personnelles</h1>
+<app-input type="text" label="Prénom" [value]="user.firstname.value" [isValid]="user.firstname.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'firstname')"></app-input>
+<app-input type=" text" label="Nom de famille" [value]="user.lastname.value" [isValid]="user.lastname.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'lastname')">
+</app-input>
+<app-input type="text" label="Email" [value]="user.email.value" [isValid]="user.email.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'email')"></app-input>
+<app-input type="text" label="Adresse" [value]="user.address.value" [isValid]="user.address.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'address')"></app-input>
+<app-input type="text" label="Code postal" [value]="user.postalCode.value" [isValid]="user.postalCode.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'postalCode')">
+</app-input>
+<app-input type="text" label="Ville" [value]="user.city.value" [isValid]="user.city.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'city')"></app-input>
+<app-input type="text" label="Pays" [value]="user.country.value" [isValid]="user.country.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'country')"></app-input>
+<app-input type="text" label="Numero de téléphone" [value]="user.phoneNumber.value" [isValid]="user.phoneNumber.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'phoneNumber')"></app-input>
+<app-input type="text" label="Civilité" [value]="user.civility.value" [isValid]="user.civility.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'civility')"></app-input>
+
+<h1>Informations de connexion</h1>
+<app-input type="text" label="Nom d'utilisateur" [value]="user.login.value" [isValid]="user.login.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'login')"></app-input>
+<app-input type="text" label="Mot de passe" [value]="user.password.value" [isValid]="user.password.isValid"
+    (valueChangeEventEmitter)="changeValue($event, 'password')"></app-input>
+
+<button (click)="submit()">Valider</button>

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./saisie.component.scss'],
 })
 export class SaisieComponent implements OnInit {
-  name: String = 'Clément';
+  name: string = 'Clément';
   firstButtonIsValid: Boolean;
   secondButtonIsValid: Boolean;
 
@@ -23,6 +23,11 @@ export class SaisieComponent implements OnInit {
   handleSecondButtonClick(): void {
     this.firstButtonIsValid = true;
     this.secondButtonIsValid = false;
+  }
+
+  getColor(): string {
+    if (this.name === 'Clément') return 'green';
+    return 'red';
   }
 
   ngOnInit(): void {}
