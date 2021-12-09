@@ -15,12 +15,16 @@
   }
   input {
     background-color: #2a2a35;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 4px;
     padding: 10px 15px;
     font-size: 1em;
+
+    &.error {
+      border-color: #f30808;
+    }
   }
-  .error {
+  span.error {
     color: #f30808;
     font-size: 0.7em;
   }

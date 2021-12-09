@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import '../../ts/types';
 
 @Component({
   selector: 'app-input',
@@ -10,13 +11,24 @@ export class InputComponent implements OnInit {
   @Input() label: string = '';
   @Input() value: string = '';
   @Input() isValid: boolean = true;
+  @Input() pattern?: RegExp | null = null;
 
-  @Output() valueChangeEventEmitter = new EventEmitter<string>();
+  @Output() valueChangeEventEmitter =
+    new EventEmitter<FormInputChangeEventValues>();
 
   constructor() {}
 
-  handleInputChange(value: any) {
-    this.valueChangeEventEmitter.emit(value.target.value);
+  handleInputChange(event: any) {
+    const eventValue = event.target.value;
+    let eventIsValid = true;
+    if (this.pattern) {
+      if (!this.pattern.test(eventValue)) eventIsValid = false;
+    }
+    const parameters: FormInputChangeEventValues = {
+      value: eventValue,
+      isValid: eventIsValid,
+    };
+    this.valueChangeEventEmitter.emit(parameters);
   }
 
   ngOnInit(): void {}

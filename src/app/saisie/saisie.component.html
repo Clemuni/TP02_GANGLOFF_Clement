@@ -1,7 +1,0 @@
-<p [ngStyle]="{color: getColor()}">{{name | uppercase}}</p>
-<p *ngIf="name !== ''">Il y a un nom</p>
-<button [disabled]="!firstButtonIsValid" (click)="handleFirstButtonClick()">Envoyer</button>
-<button [disabled]="!secondButtonIsValid" (click)="handleSecondButtonClick()">Envoyer</button>
-<input [(ngModel)]="name" />
-<app-adresse [name]="name"></app-adresse>
-<app-adresse *ngFor="let name of ['luderic', 'valentin']" [name]="name"></app-adresse>
